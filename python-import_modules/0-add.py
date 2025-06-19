@@ -6,4 +6,7 @@ if __name__ == "__main__":
     b = 2
 
     print(f"{a} + {b} = {add(a, b)}")
+<<<<<<< HEAD
 
+=======
+>>>>>>> d9c144c (Fix path and add 0-add.py task)
