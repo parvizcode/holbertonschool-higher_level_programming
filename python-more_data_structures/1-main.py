@@ -1,5 +1,6 @@
-# 1-main.py
 #!/usr/bin/python3
+# 1-main.py
+
 search_replace = __import__('1-search_replace').search_replace
 
 my_list = [1, 2, 3, 4, 5, 4, 2, 1, 1, 4, 89]
