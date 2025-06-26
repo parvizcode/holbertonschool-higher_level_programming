@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """Defines a Rectangle class with area and perimeter calculations."""
 
+
 class Rectangle:
     """Represents a rectangle with width and height attributes."""
 
     def __init__(self, width=0, height=0):
         """Initialize a new Rectangle.
-        
+
         Args:
             width (int): The width of the rectangle (default 0)
             height (int): The height of the rectangle (default 0)
@@ -46,7 +47,7 @@ class Rectangle:
 
     def perimeter(self):
         """Return the perimeter of the Rectangle.
-        
+
         Returns 0 if either width or height is 0.
         """
         if self.__width == 0 or self.__height == 0:
