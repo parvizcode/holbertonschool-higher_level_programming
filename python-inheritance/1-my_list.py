@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module that defines MyList class inheriting from list."""
 
+
 class MyList(list):
     """A custom list that can print itself sorted."""
 
