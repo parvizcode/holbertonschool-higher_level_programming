@@ -1,13 +1,14 @@
+#!/usr/bin/python3
 def add_attribute(obj, name, value):
-    """Nesneye yeni bir özellik ekler.
+    """Adds a new attribute to an object if possible.
 
     Args:
-        obj: Özellik eklenecek nesne
-        name: Özelliğin adı
-        value: Özelliğin değeri
+        obj: The object to add an attribute to
+        name: Name of the new attribute
+        value: Value of the new attribute
 
     Raises:
-        TypeError: Nesneye yeni özellik eklenemezse
+        TypeError: If the object can't have new attributes
     """
     if not hasattr(obj, '__dict__'):
         raise TypeError("can't add new attribute")
