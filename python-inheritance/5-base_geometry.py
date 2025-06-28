@@ -6,9 +6,5 @@ class BaseGeometry:
     """Represent base geometry."""
 
     def __dir__(self):
-        """Custom dir() implementation that excludes
-        __init_subclass__ attribute.
-        """
-        attributes = dir(type(self))
-        return [attr for attr in attributes
-                if attr != '__init_subclass__']
+        """Customize dir() output to include all default attributes"""
+        return sorted(dir(type(self)))
