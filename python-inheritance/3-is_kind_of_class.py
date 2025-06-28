@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """
 This module defines is_kind_of_class.
 It checks if an object is an instance of a class or a class that inherited from it.
