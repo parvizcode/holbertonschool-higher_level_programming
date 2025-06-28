@@ -3,6 +3,7 @@
 
 import sys
 
+
 def print_stats(total_size, status_codes):
     """Prints the accumulated metrics.
     
@@ -15,7 +16,9 @@ def print_stats(total_size, status_codes):
         if status_codes[code] > 0:
             print(f"{code}: {status_codes[code]}")
 
+
 def main():
+    """Main function to process input and print statistics."""
     total_size = 0
     status_codes = {
         '200': 0,
@@ -54,6 +57,7 @@ def main():
     except KeyboardInterrupt:
         print_stats(total_size, status_codes)
         raise
+
 
 if __name__ == "__main__":
     main()
