@@ -1,20 +1,22 @@
 #!/usr/bin/python3
-"""Module for adding attributes to objects if possible."""
+"""
+This module defines a function that adds a new attribute to an object
+if it is possible. Raises a TypeError if the attribute cannot be added.
+"""
 
-def add_attribute(obj, name, value):
-    """Adds a new attribute to an object if possible.
+
+def add_attribute(obj, attr_name, attr_value):
+    """
+    Adds a new attribute to an object if possible.
 
     Args:
-        obj: The object to add an attribute to
-        name (str): Name of the new attribute
-        value: Value of the new attribute
+        obj: The object to which the attribute should be added.
+        attr_name: The name of the attribute to add.
+        attr_value: The value of the attribute to add.
 
     Raises:
-        TypeError: If the object can't have new attributes
+        TypeError: If the object does not support adding new attributes.
     """
-    if hasattr(obj, '__dict__'):
-        setattr(obj, name, value)
-    elif hasattr(type(obj), '__slots__') and name not in type(obj).__slots__:
+    if not hasattr(obj, '__dict__') and not hasattr(obj, '__slots__'):
         raise TypeError("can't add new attribute")
-    else:
-        setattr(obj, name, value)
+    setattr(obj, attr_name, attr_value)
