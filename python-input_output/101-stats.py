@@ -6,7 +6,7 @@ import sys
 
 def print_stats(total_size, status_codes):
     """Prints the accumulated metrics.
-    
+
     Args:
         total_size (int): Total file size
         status_codes (dict): Dictionary of status code counts
@@ -36,24 +36,24 @@ def main():
         for line in sys.stdin:
             line_count += 1
             parts = line.split()
-            
+
             try:
                 total_size += int(parts[-1])
             except (IndexError, ValueError):
                 pass
-            
+
             try:
                 code = parts[-2]
                 if code in status_codes:
                     status_codes[code] += 1
             except IndexError:
                 pass
-            
+
             if line_count % 10 == 0:
                 print_stats(total_size, status_codes)
-        
+
         print_stats(total_size, status_codes)
-    
+
     except KeyboardInterrupt:
         print_stats(total_size, status_codes)
         raise
