@@ -1,8 +1,4 @@
--- Kullanıcı varsa silmeden oluşturmak için IF NOT EXISTS kullanacağız
+-- Create a user and grant privileges
 CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
-
--- Tüm yetkileri verme
-GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost' WITH GRANT OPTION;
-
--- Yetkilerin geçerli olması için
+GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
 FLUSH PRIVILEGES;
