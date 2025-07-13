@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Fetches and displays the value of X-Request-Id in the response header of a given URL"""
+
 import sys
 import requests
 
