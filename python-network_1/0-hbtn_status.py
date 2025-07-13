@@ -1,13 +1,20 @@
-#!/usr/bin/env python3
-""" Fetches https://intranet.hbtn.io/status using urllib """
-
-from urllib.request import urlopen
+#!/usr/bin/python3
+"""Fetches a URL"""
+from urllib import request
 
 if __name__ == "__main__":
+    """Makes code executable when it is directly run"""
     url = "https://intranet.hbtn.io/status"
-    with urlopen(url) as response:
+    req = request.Request(url)
+    req.add_header('cfclearance', 'true')
+
+    with request.urlopen(req) as response:
+        """Opens the url and reads the contents"""
         body = response.read()
-        print("Body response:")
-        print(f"\t- type: {type(body)}")
-        print(f"\t- content: {body}")
-        print(f"\t- utf8 content: {body.decode('utf-8')}")
+        utf8_content = body.decode('utf-8')
+
+    """Prints out the desired output"""
+    print("Body response:")
+    print("\t- type:", type(body))
+    print("\t- content:", body)
+    print("\t- utf8 content:", utf8_content)
