@@ -1,13 +1,9 @@
-#!/usr/bin/env python3
-"""Fetches the X-Request-Id header from a URL response"""
+#!/usr/bin/python3
+""" Response header value """
 
+
+import urllib.request
 import sys
-from urllib.request import urlopen, Request
-
 if __name__ == "__main__":
-    url = sys.argv[1]
-
-    req = Request(url)
-    with urlopen(req) as response:
-        headers = response.info()
-        print(headers.get("X-Request-Id"))
+    with urllib.request.urlopen(sys.argv[1]) as response:
+        print(response.headers.get('X-Request-Id'))
